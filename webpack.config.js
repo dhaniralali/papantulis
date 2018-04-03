@@ -54,18 +54,22 @@ var config = {
   },
   devServer: {
     disableHostCheck: true,   // That solved it
-   historyApiFallback: true,
-   watchOptions: {
-       ignored: /node_modules/
-     },
-     contentBase: "src",
-     hot: true,
-     proxy: {
-      '^/api/*': {
-        target: 'http://localhost:3000/api/',
-        secure: false
-      }
-    }
+    historyApiFallback: true,
+    watchOptions: {
+      ignored: /node_modules/
+    },
+    contentBase: "src",
+    hot: true,
+    proxy: [{
+      path: '^/api/*',
+      target: 'http://localhost:3000/'
+    }]
+    // proxy: {
+    // '^/api/*': {
+    //   target: 'http://localhost:3000/api/',
+    //   secure: false
+    // }
+  
  },
 
   plugins: debug ? [] : [

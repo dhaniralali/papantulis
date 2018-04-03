@@ -1,20 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Router, Route } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
+
+
 
 import './../scss/main.scss';
 
 import User from './components/User.jsx';
 
-class App extends React.Component {
-  render () {
+const App = () => {
     return (
-      <div className="home">
-        <User />
-        <p>Welcome to the ReactJS and ExpressJS gesnerator</p>
-        <p>Check out the <a href="https://github.com/kevin-wynn/reactjs-express-generator/wiki">documentation</a> to get started.</p>
-      </div>
+      <BrowserRouter>
+        <Route path="/" component={User}>
+          
+        </Route>
+      </BrowserRouter>
     );
-  }
 }
 
 render(<App/>, document.getElementById('app'));
