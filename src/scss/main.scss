@@ -1,19 +1,17 @@
+@import 'variables';
 @import 'fonts';
+// @import 'bootstrap';
+@import 'utilities';
+@import 'cards';
+@import 'components';
+@import 'placeholders';
 
-* {
-  box-sizing: border-box;
-}
+
+
+
 
 body {
-  background: #ececec;
+    margin:0;
+    background-color:$gray;
 }
 
-.home {
-  display: block;
-  width: 520px;
-  height: auto;
-  margin: 50px auto;
-  background: #fff;
-  border-radius: 5px;
-  padding: 15px 50px;
-}

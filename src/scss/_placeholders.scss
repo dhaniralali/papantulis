@@ -1,0 +1,39 @@
+.ph-small {
+    // background-color: $gray-light;
+    border-radius: 1px;
+    height: 8px;
+    width: 80px;
+    margin-bottom: 13px;
+    
+}
+
+.ph-medium {
+    // background-color: $gray-light;
+    border-radius: 1px;
+    height: 11px;
+    margin-bottom: 13px;
+}
+
+.ph-big {
+    // background-color: $gray-light;
+    border-radius: 1px;
+    height: 14px;
+    width: 40%;
+    margin-bottom: 18px;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+    50% {
+        background-color: rgba(165, 165, 165, 0.3)
+    }
+    100% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+}
+
+.loading-line {
+    animation: pulse 1s infinite ease-in-out;
+}

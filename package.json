@@ -13,7 +13,6 @@
     "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -26,8 +25,9 @@
     "cookie-parser": "^1.4.3",
     "css-loader": "^0.28.7",
     "debug": "^3.0.1",
+    "dotenv": "^5.0.1",
     "express": "^4.15.4",
-    "mysql": "^2.14.1",
+    "mysql": "^2.15.0",
     "node-sass": "^4.5.3",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.14.12",
@@ -37,6 +37,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "request": "^2.81.0",
@@ -50,10 +51,16 @@
     "webpack-stream": "^4.0.0"
   },
   "scripts": {
-    "server": "node app.js",
-    "react-dev": "webpack-dev-server --progress --hot --debug --inline --colors --debug --port 8080",
+    "server": "nodemon app.js --watch",
+    "react-dev": "webpack-dev-server --progress --hot --debug --inline --colors --debug --port 3001",
     "react": "webpack",
     "start": "concurrently \"npm run react\" \"npm run server\"",
     "dev": "concurrently \"npm run react-dev\" \"npm run server\""
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "redux-logger": "^3.0.6"
   }
 }

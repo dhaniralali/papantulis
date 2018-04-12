@@ -1,5 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-thin {
+  font-weight: lighter;
+}
+
+small {
+  color: $gray-dark;
+  font-size: 11px;
+  display: block;
+}
+medium {
+  color: $gray-dark;
+  font-size: 15px;
+  display: block;
+}
+big {
+  color: $gray-dark;
+  font-size: 27px;
+  display: block;
 }

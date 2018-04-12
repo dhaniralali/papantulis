@@ -43,10 +43,18 @@ var config = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'env', 'stage-0'],
+          presets: ['react', 'env', 'stage-3','es2015'],
           plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
         }
-      },{
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+            presets: ['es2015', 'stage-3']
+        }
+      }, 
+      {
         test: /\.scss$/,
         loaders: ["style-loader","css-loader","sass-loader"]
       }
@@ -60,13 +68,15 @@ var config = {
     },
     contentBase: "src",
     hot: true,
-    proxy: [{
-      path: '^/api/*',
-      target: 'http://localhost:3000/'
-    }]
+    proxy: {
+      '/api': {
+      changeOrigin: true,
+      target: 'http://localhost:3000',
+      secure: false}
+    }
     // proxy: {
     // '^/api/*': {
-    //   target: 'http://localhost:3000/api/',
+    //   target: 'http://localhost:3000',
     //   secure: false
     // }
   
