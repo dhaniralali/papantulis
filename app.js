@@ -18,10 +18,6 @@ const places = require('./routes/places');
 
 
 app.use(express.static(__dirname + '/src'));
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/index.html'))
-  })
   
 
 app.use(bodyParser.json());
@@ -32,7 +28,9 @@ app.use(function(req,res,next){setTimeout(next,1000)})
 app.use('/api/users', users);
 app.use('/api/places', places);
 
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/index.html'))
+  })
 
 http.createServer(app).listen(3000);
 
